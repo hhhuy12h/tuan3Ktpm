@@ -13,6 +13,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Autowired
     private JwtRequestFilter jwtRequestFilter;
 
+
     @Override
     public void configure(HttpSecurity http) throws Exception {
         http.csrf()

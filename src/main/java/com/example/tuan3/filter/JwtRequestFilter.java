@@ -59,6 +59,7 @@ public class JwtRequestFilter extends OncePerRequestFilter {
                         authorities.add(new SimpleGrantedAuthority(p.toString()));
                     });
 
+
             UsernamePasswordAuthenticationToken authentication =
                     new UsernamePasswordAuthenticationToken(user, null, authorities);
 

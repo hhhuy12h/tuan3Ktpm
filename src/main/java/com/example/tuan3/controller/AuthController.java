@@ -38,12 +38,14 @@ public class AuthController {
         UserPrincipal userPrincipal =
                 userService.findByUsername(user.getUsername());
 
+
         if (null == user || !new BCryptPasswordEncoder()
                 .matches(user.getPassword(), userPrincipal.getPassword())) {
 
             return ResponseEntity.status(HttpStatus.BAD_REQUEST)
                     .body("Account or password is not valid!");
         }
+
 
         Token token = new Token();
         token.setToken(jwtUtil.generateToken(userPrincipal));
